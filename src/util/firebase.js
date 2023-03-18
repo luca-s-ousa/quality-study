@@ -1,19 +1,20 @@
+require("dotenv").config();
 import Firebase from "firebase";
-import 'firebase/database';
-import 'firebase/auth';
+import "firebase/database";
+import "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAZ6vsDa3onE3-q6A8jyTWw6JydF9eK-bk",
-    authDomain: "quality-study-de42b.firebaseapp.com",
-    projectId: "quality-study-de42b",
-    storageBucket: "quality-study-de42b.appspot.com",
-    messagingSenderId: "370763238882",
-    appId: "1:370763238882:web:f7d533f93998c4e19d3dbb",
-    measurementId: "G-G6TVZSS0FR"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID,
 };
 
-if(!Firebase.apps.length){
-    Firebase.initializeApp(firebaseConfig);
+if (!Firebase.apps.length) {
+  Firebase.initializeApp(firebaseConfig);
 }
 
 export default Firebase;
